@@ -207,6 +207,7 @@ python examples/chat.py -h
 | **GPT-OSS**                                       | `GptOssForCausalLM`                                                           |            |                       |
 | **HyperCLOVAX**                                   | `HyperCLOVAXForCausalLM`<br>`HCXVisionV2ForCausalLM`                          |     ✓     |                       |
 | **Hy3**                                           | `HYV3ForCausalLM`                                                             |            |                       |
+| **Inkling 2 Mini**                                | `Inkling2LoopForConditionalGeneration`                                       |            | [Experimental text-only conversion and inference](doc/inkling2_mini.md) |
 | **IQuest-Coder**                                  | `IQuestCoderForCausalLM`                                                      |            |                       |
 | **Kimi Linear**                                   | `KimiLinearForCausalLM`                                                       |            |                       |
 | **Ling 3.x**                                      | `BailingMoeV3ForCausalLM`                                                     |            |                       |

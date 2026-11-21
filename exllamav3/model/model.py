@@ -932,3 +932,7 @@ class Model(Model_TPMixin, Model_LSMixin):
         Decide if any model-specific requirements are met when creating Model
         """
         pass
+
+    def prepare_conversion(self, work_dir: str):
+        """Optional setup for architectures that replay already converted modules."""
+        pass

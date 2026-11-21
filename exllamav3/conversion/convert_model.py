@@ -416,6 +416,7 @@ def get_base_model(args):
     print(f" -- Loaded model config")
     print(f"    Architecture: {config.architecture}")
     model = Model.from_config(config)
+    model.prepare_conversion(args["work_dir"])
     use_reference_state = not model.caps.get("uncalibrated_quantize", False)
     assert model.caps.get("can_quantize", True), "Cannot quantize this model type."
     print(f" -- Created model instance:")
@@ -1497,6 +1498,7 @@ def main(args, job_state):
     # is a plain sum over token batches, so shards merge exactly.
     parallel_calib = (
         state is not None and
+        not model.caps.get("serial_calibration") and
         len(devices) > 1
     )
     replica_models = [Model.from_config(config) for _ in devices[1:]] if parallel_calib else []
